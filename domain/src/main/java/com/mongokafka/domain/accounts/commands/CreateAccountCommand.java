@@ -13,12 +13,6 @@ public class CreateAccountCommand extends BaseCommand<UUID> {
 
     private final String currency;
 
-    public CreateAccountCommand() {
-        super(UUID.randomUUID());
-        this.accountBalance = null;
-        this.currency = null;
-    }
-
     public CreateAccountCommand(BigDecimal accountBalance, String currency) {
         super(UUID.randomUUID());
         this.accountBalance = accountBalance;

@@ -2,9 +2,11 @@ package com.mongokafka.domain.common;
 
 
 import lombok.Getter;
+import lombok.Setter;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Getter
+@Setter
 public class BaseCommand<T> {
 
     @TargetAggregateIdentifier

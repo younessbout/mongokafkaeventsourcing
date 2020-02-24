@@ -1,6 +1,7 @@
 package com.mongokafka.application.accounts.accounts;
 
 import com.mongokafka.domain.accounts.commands.CreateAccountCommand;
+import com.mongokafka.domain.accounts.commands.CreditMoneyCommand;
 import lombok.AllArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.stereotype.Service;
@@ -16,5 +17,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public CompletableFuture<String> createAccount(CreateAccountCommand createAccountCommand) {
         return commandGateway.send(createAccountCommand);
+    }
+
+    @Override
+    public CompletableFuture<String> creditMoneyToAccount(CreditMoneyCommand creditMoneyCommand) {
+
+        return commandGateway.send(creditMoneyCommand);
     }
 }
